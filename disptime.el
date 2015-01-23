@@ -1,29 +1,10 @@
 ;;; disptime.el --- display time, load average, etc. in mode line
 
-;; Copyright (C) 1996, 97, 2000 Noah S. Friedman
-
 ;; Author: Noah Friedman <friedman@splode.com>
-;; Maintainer: friedman@splode.com
-;; Keywords: extensions
-;; Status: Works in Emacs 19 and XEmacs.
 ;; Created: 1996-05-03
+;; Public domain.
 
-;; $Id: disptime.el,v 1.11 2005/12/27 05:18:49 friedman Exp $
-
-;; This program is free software; you can redistribute it and/or modify
-;; it under the terms of the GNU General Public License as published by
-;; the Free Software Foundation; either version 2, or (at your option)
-;; any later version.
-;;
-;; This program is distributed in the hope that it will be useful,
-;; but WITHOUT ANY WARRANTY; without even the implied warranty of
-;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-;; GNU General Public License for more details.
-;;
-;; You should have received a copy of the GNU General Public License
-;; along with this program; if not, you can either send email to this
-;; program's maintainer or write to: The Free Software Foundation,
-;; Inc.; 51 Franklin Street, Fifth Floor; Boston, MA 02110-1301, USA.
+;; $Id: disptime.el,v 1.12 2015/01/12 02:37:43 friedman Exp $
 
 ;;; Commentary:
 
@@ -385,8 +366,8 @@ Sometimes knowing you have email is just too damned distracting."
   (if (fboundp 'force-mode-line-update)
       (force-mode-line-update 'all)
     (save-excursion (set-buffer (other-buffer)))
-    (set-buffer-modified-p (buffer-modified-p)))
-  (sit-for 0))
+    (set-buffer-modified-p (buffer-modified-p))
+    (sit-for 0)))
 
 (provide 'disptime)
 
