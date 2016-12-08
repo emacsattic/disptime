@@ -4,7 +4,7 @@
 ;; Created: 1996-05-03
 ;; Public domain.
 
-;; $Id: disptime.el,v 1.12 2015/01/12 02:37:43 friedman Exp $
+;; $Id: disptime.el,v 1.13 2016/11/24 20:24:52 friedman Exp $
 
 ;;; Commentary:
 
@@ -157,7 +157,7 @@ unreachable\) subdirectories.")
 (defun disptime-set-time-string-12hr ()
   (let* ((time (current-time-string))
          (24-hours (substring time 11 13))
-         (hour (string-to-int 24-hours))
+         (hour (string-to-number 24-hours))
          (12-hours (int-to-string (1+ (% (+ hour 11) 12))))
          (am-pm (if (> hour 11) "pm" "am")))
     (setq disptime-time-string
